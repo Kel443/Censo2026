@@ -1,0 +1,765 @@
+/* Importando Fonte Inter do Google Fonts para um visual moderno */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   CSS Principal - Escolas Censo 2026
+   Paleta de Cores:
+   - Azul: #0657a4
+   - Cinza Escuro: #3a3838
+   - Branco: #ffffff
+   - Preto: #000000
+   ========================================================================== */
+
+:root {
+  --primary-color: #0657a4;
+  --text-dark: #000000;
+  --text-muted: #3a3838;
+  --bg-light: #f4f6f9;
+  --white: #ffffff;
+  --border-color: #dcdfe6;
+  --border-hover: #0657a4;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition-speed: 0.25s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Header e Menu de Navegação
+   ========================================================================== */
+.DivPrincipal {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(6, 87, 164, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.H1Titulo1 {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.MenuNavegacao {
+  display: flex;
+  gap: 15px;
+}
+
+.LinkMenu {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1.5px solid transparent;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.LinkMenu:hover {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.LinkMenu.ativo {
+  color: var(--primary-color);
+  background-color: var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Layout Principal (Conteiner)
+   ========================================================================== */
+.Conteiner {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+  gap: 30px;
+}
+
+/* ==========================================================================
+   Formulário de Cadastro
+   ========================================================================== */
+.Formulario {
+  flex: 1.2;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.Titulo_Formulario {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* Indicador de Etapas */
+.IndicadorEtapas {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f2f5;
+  padding: 6px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.EtapaPasso {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.EtapaPasso.ativa {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Agrupamento de Seções */
+.Seção1, .Seção2, .Seção3 {
+  animation: fadeSlide 0.35s ease;
+}
+
+.Seção1 h3, .Seção2 h3, .Seção3 h3 {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elementos de Formulário */
+.divFlexColum {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-dark);
+  background-color: var(--white);
+  transition: all var(--transition-speed) ease;
+}
+
+input[type="text"]::placeholder {
+  color: #a0aec0;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(6, 87, 164, 0.12);
+}
+
+/* Grids de layout do formulário original */
+.divSelect1 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.DivOpção1,
+.DivOpção2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.DivOpção3,
+.DivOpção4,
+.DivOpção5 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.divFlexColum1, .divFlexColum2,
+.divFlexColum3, .divFlexColum4,
+.divFlexColum5, .divFlexColum6 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grupos de Perguntas no Formulário */
+.GrupoPerguntas {
+  margin-bottom: 25px;
+  background-color: #fafbfc;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #f0f2f5;
+}
+
+.GrupoPerguntas h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/* Checkboxes modernos */
+.GridCheckboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.ItemCheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--white);
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-speed) ease;
+  cursor: pointer;
+}
+
+.ItemCheck:hover {
+  background-color: #f7fafc;
+  border-color: var(--primary-color);
+}
+
+.ItemCheck input[type="checkbox"],
+.ItemCheck input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+.ItemCheck label {
+  margin-bottom: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Layout Salas e Informática */
+.DivFlexSalas {
+  display: flex;
+  gap: 20px;
+}
+
+.DivSalas, .Iformatica {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Botões de Navegação */
+.BotoesNavegacao {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.BtnAvançar1,
+.BtnVoltar1,
+.BtnPrimario,
+.BtnSecundario,
+.BtnFechar {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.BtnAvançar1,
+.BtnPrimario {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.BtnAvançar1:hover,
+.BtnPrimario:hover {
+  background-color: #04427d;
+  box-shadow: 0 4px 10px rgba(6, 87, 164, 0.25);
+  transform: translateY(-1px);
+}
+
+.BtnVoltar1,
+.BtnSecundario,
+.BtnFechar {
+  background-color: var(--text-muted);
+  color: var(--white);
+}
+
+.BtnVoltar1:hover,
+.BtnSecundario:hover,
+.BtnFechar:hover {
+  background-color: #262525;
+  box-shadow: 0 4px 10px rgba(58, 56, 56, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Painel Lateral de Dados em Tempo Real (Live Preview)
+   ========================================================================== */
+.Dados_Da_Escola {
+  flex: 0.8;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  align-self: flex-start;
+  position: sticky;
+  top: 100px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.Titulo_Dados {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+.CardPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.SecaoResumoPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.SecaoResumoPreview h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.SecaoResumoPreview p {
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+.DadoVazio {
+  color: #a0aec0 !important;
+  font-style: italic;
+}
+
+.DadoPreenchido {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.ListaSemEstilo {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ListaSemEstilo li {
+  font-size: 12.5px;
+  background-color: #f7fafc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.DivisorPreview {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 10px 0;
+}
+
+/* ==========================================================================
+   Seção de Contato
+   ========================================================================== */
+.ContatoSeção {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.ContatoCard {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.ContatoCard h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.SubtituloContato {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.ContatoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  margin-bottom: 35px;
+}
+
+.ContatoItem {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background-color: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.IconeContato {
+  font-size: 24px;
+  background-color: rgba(6, 87, 164, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContatoItem strong {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: block;
+}
+
+.ContatoItem p {
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   Central de Revisão e Impressão (Modal)
+   ========================================================================== */
+.RevisaoCentralizada {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.RevisaoCard {
+  background-color: var(--white);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.RevisaoHeader {
+  padding: 25px 30px;
+  border-bottom: 1.5px solid var(--border-color);
+  background-color: #fcfdfe;
+  border-radius: 12px 12px 0 0;
+}
+
+.RevisaoHeader h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.RevisaoHeader p {
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+
+.RevisaoConteudo {
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Formatação do relatório dentro da revisão */
+.RevisaoSecao {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.RevisaoSecao h3 {
+  font-size: 15px;
+  color: var(--primary-color);
+  border-bottom: 1.5px solid var(--primary-color);
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.RevisaoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 20px;
+}
+
+.RevisaoItem {
+  font-size: 13.5px;
+  color: var(--text-dark);
+}
+
+.RevisaoItem strong {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.RevisaoBotoes {
+  padding: 20px 30px;
+  border-top: 1.5px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  background-color: #fcfdfe;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ==========================================================================
+   CSS de Impressão (@media print)
+   ========================================================================== */
+@media print {
+  body {
+    background-color: var(--white) !important;
+    color: var(--text-dark) !important;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Ocultar cabeçalho original, menu, formulário de cadastro, preview e outros botões */
+  header,
+  .MenuNavegacao,
+  #AreaCadastro,
+  #AreaContato,
+  .no-print,
+  .RevisaoBotoes,
+  .RevisaoHeader p,
+  button {
+    display: none !important;
+  }
+  
+  /* Garantir que o container de revisão fique perfeitamente visível */
+  .RevisaoCentralizada {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .RevisaoCard {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block !important;
+  }
+
+  .RevisaoHeader {
+    border-bottom: 2px solid #000 !important;
+    padding: 10px 0 !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+    background: transparent !important;
+  }
+
+  .RevisaoHeader h2 {
+    color: #000 !important;
+    font-size: 26px !important;
+    text-transform: uppercase !important;
+  }
+
+  .RevisaoConteudo {
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+  }
+
+  .RevisaoSecao {
+    background-color: transparent !important;
+    border: 1px solid #000 !important;
+    border-radius: 0 !important;
+    padding: 15px !important;
+    page-break-inside: avoid !important;
+  }
+
+  .RevisaoSecao h3 {
+    color: #000 !important;
+    border-bottom: 1.5px solid #000 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+  }
+
+  .RevisaoGrid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px 15px !important;
+  }
+
+  .RevisaoItem {
+    font-size: 13px !important;
+  }
+
+  .RevisaoItem strong {
+    color: #000 !important;
+  }
+
+  /* Listas em impressão */
+  .ListaSemEstilo li {
+    background-color: transparent !important;
+    border-left: 2px solid #000 !important;
+    padding-left: 5px !important;
+    color: #000 !important;
+    font-size: 12px !important;
+  }
+}

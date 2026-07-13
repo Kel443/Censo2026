@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="midiaQuire.css">
+  <title>Escolas Censo 2026</title>
+</head>
+<body>
+  <!-- Header com Título e Menu de Navegação -->
+  <header class="DivPrincipal">
+    <h1 class="H1Titulo1">Sistema de Cadastro - Escolas Censo 2026</h1>
+    <nav class="MenuNavegacao">
+      <button type="button" id="BtnMenuCadastro" class="LinkMenu ativo">Formulário de Cadastro</button>
+      <button type="button" id="BtnMenuContato" class="LinkMenu">Contato</button>
+    </nav>
+  </header>
+
+  <!-- Container Principal do Formulário e Preview -->
+  <section class="Conteiner" id="AreaCadastro">
+    
+    <form class="Formulario" id="FormCenso" action="CadastroAluno.php" method="post" onsubmit="event.preventDefault();">
+      <h2 class="Titulo_Formulario">Formulário de Cadastro</h2>
+      
+      <!-- Indicador de Etapas -->
+      <div class="IndicadorEtapas">
+        <span class="EtapaPasso ativa" id="Passo1">1. Identificação</span>
+        <span class="EtapaPasso" id="Passo2">2. Infraestrutura</span>
+        <span class="EtapaPasso" id="Passo3">3. Equipamentos</span>
+      </div>
+
+      <!-- SEÇÃO 1: Identificação e Dados Básicos -->
+      <section class="Seção1">
+        <h3>Dados de Identificação</h3>
+        
+        <div class="divFlexColum">
+          <label for="NomeEscola">Nome Da Escola</label>
+          <input type="text" name="NomeEscola" id="NomeEscola" placeholder="Digite o nome da school">
+        </div>
+
+        <div class="divSelect1">
+          <div class="DivOpção1">
+            <label for="Localidade">Localidade</label>
+            <select name="Localidade" id="Localidade">
+              <option value="">Selecione a Localidade</option>
+              <option value="Uibaí">Uibaí</option>
+              <option value="Lagoinha">Lagoinha</option>
+              <option value="Hidrolândia">Hidrolândia</option>
+              <option value="Boca d`água">Boca d`água</option>
+              <option value="Quixabeira">Quixabeira</option>
+              <option value="Poço">Poço</option>
+              <option value="Baixão do Poço">Baixão do Poço</option>
+              <option value="Chapadinha">Chapadinha</option>
+              <option value="Caldeirão">Caldeirão</option>
+            </select>
+
+            <h5 style="margin-top: 15px; margin-bottom: 5px;">Ano Letivo</h5>
+            <label for="InicioData">Início</label>
+            <input type="date" name="InicioData" id="InicioData">
+          </div>
+
+          <div class="DivOpção2">
+            <label for="Dependencia">Dependência Administrativa</label>
+            <select name="Dependencia" id="Dependencia">
+              <option value="">Selecione a Dependência</option>
+              <option value="Municipal">Municipal</option>
+              <option value="Estadual">Estadual</option>
+              <option value="Particular">Particular</option>
+            </select>
+            
+            <label for="TerminoData" style="margin-top: 25px;">Término</label>
+            <input type="date" name="TerminoData" id="TerminoData">
+          </div>
+        </div>
+
+        <div class="DivOpção3">
+          <div class="divFlexColum1">
+            <label for="Funcionamento">Local de funcionamento</label>
+            <select name="Funcionamento" id="Funcionamento">
+              <option value="">Local da escola</option>
+              <option value="Prédio escolar">Prédio escolar</option>
+              <option value="Sala(s) em outra escola">Sala(s) em outra escola</option>
+              <option value="Galpão/rancho/paiol/barracão">Galpão/rancho/paiol/barracão</option>
+              <option value="Unidade de atendimento socioeducativo">Unidade de atendimento socioeducativo</option>
+              <option value="Unidade prisional">Unidade prisional</option>
+              <option value="Outro(s)">Outro(s)</option>
+            </select>
+          </div>
+          <div class="divFlexColum2">
+            <label for="Ocupação">Forma de ocupação escolar</label>
+            <select name="ocupação" id="Ocupação">
+              <option value="">Selecione a ocupação</option>
+              <option value="Próprio">Próprio</option>
+              <option value="Alugado">Alugado</option>
+              <option value="Cedido">Cedido</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="DivOpção4">
+          <div class="divFlexColum3">
+            <label for="AguaPotavel">Abastecimento de água</label>
+            <select name="AguaPotavel" id="AguaPotavel">
+              <option value="">Selecione uma opção</option>
+              <option value="Rede pública">Rede pública</option>
+              <option value="Poço artesiano">Poço artesiano</option>
+              <option value="Cacimba/cisterna/poço">Cacimba/cisterna/poço</option>
+              <option value="Fonte/rio/igarapé/riacho/córrego">Fonte/rio/igarapé/riacho/córrego</option>
+              <option value="Carro-pipa">Carro-pipa</option>
+              <option value="Não há abastecimento de água">Não há abastecimento de água</option>
+            </select>
+          </div>
+          <div class="divFlexColum4">
+            <label for="Esgotamento">Esgotamento sanitário</label>
+            <select name="Esgotamento" id="Esgotamento">
+              <option value="">Escolha uma opção</option>
+              <option value="Rede pública">Rede pública</option>
+              <option value="Fossa séptica">Fossa séptica</option>
+              <option value="Fossa rudimentar/comum">Fossa rudimentar/comum</option>
+              <option value="Não há esgotamento sanitário">Não há esgotamento sanitário</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="DivOpção5">
+          <div class="divFlexColum5">
+            <label for="Eletricidade">Fonte de energia elétrica</label>
+            <select name="Eletricidade" id="Eletricidade">
+              <option value="">Selecione uma opção</option>
+              <option value="Rede pública">Rede pública</option>
+              <option value="Energia Solar">Energia Solar</option>
+              <option value="Gerador movido a combustível fóssil">Gerador movido a combustível fóssil</option>
+              <option value="Não há energia elétrica">Não há energia elétrica</option>
+            </select>
+          </div>
+          <div class="divFlexColum6">
+            <label for="DescarteResidos">Destinação do lixo</label>
+            <select name="DescarteResidos" id="DescarteResidos">
+              <option value="">Selecione uma opção</option>
+              <option value="Serviço de coleta">Serviço de coleta</option>
+              <option value="Queima">Queima</option>
+              <option value="Enterra">Enterra</option>
+              <option value="Leva a uma destinação final licenciada pelo poder público">Leva a uma destinação final licenciada pelo poder público</option>
+              <option value="Descarta em outra área">Descarta em outra área</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="BotoesNavegacao">
+          <button type="button" class="BtnAvançar1" id="BtnAvançarParaEtapa2">Avançar</button>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 2: Infraestrutura Física -->
+      <section class="Seção2" style="display: none;">
+        <h3>Infraestrutura Física</h3>
+        
+        <div class="GrupoPerguntas">
+          <h4>I. Administração, armazenamento e alimentação:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaDiretoria" id="SalaDiretoria">
+              <label for="SalaDiretoria">Sala de diretoria</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaProfessores" id="SalaProfessores">
+              <label for="SalaProfessores">Sala de professores</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaSecretaria" id="SalaSecretaria">
+              <label for="SalaSecretaria">Sala de secretaria</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Almoxarifado" id="Almoxarifado">
+              <label for="Almoxarifado">Almoxarifado</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Despensa" id="Despensa">
+              <label for="Despensa">Despensa</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Cozinha" id="Cozinha">
+              <label for="Cozinha">Cozinha</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Refeitório" id="Refeitório">
+              <label for="Refeitório">Refeitório</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>II. Banheiros e vestiários:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="Banheiro" id="Banheiro">
+              <label for="Banheiro">Banheiro</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="BanheiroAcessível" id="BanheiroAcessível">
+              <label for="BanheiroAcessível">Banheiro para PCD ou mobilidade reduzida</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="BanheiroInfantil" id="BanheiroInfantil">
+              <label for="BanheiroInfantil">Banheiro adequado à educação infantil</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="BanheiroFuncionários" id="BanheiroFuncionários">
+              <label for="BanheiroFuncionários">Banheiro exclusivo para funcionários</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="vestiário" id="vestiário">
+              <label for="vestiário">Banheiro ou vestiário com chuveiro</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>III. Acomodação e descanso:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="DormitórioAluno" id="DormitórioAluno">
+              <label for="DormitórioAluno">Dormitório de aluno(a)</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="DormitórioProfessor" id="DormitórioProfessor">
+              <label for="DormitórioProfessor">Dormitório de professor(a)</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaRepousoAlunos" id="SalaRepousoAlunos">
+              <label for="SalaRepousoAlunos">Sala de repouso para aluno(a)</label>          
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>IV. Aprendizagens e atendimentos especializados:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="Biblioteca" id="Biblioteca">
+              <label for="Biblioteca">Biblioteca</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaLeitura" id="SalaLeitura">
+              <label for="SalaLeitura">Sala de leitura</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="LaboratórioCiências" id="LaboratórioCiências">
+              <label for="LaboratórioCiências">Laboratório de ciências</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="LaboratórioInformática" id="LaboratórioInformática">
+              <label for="LaboratórioInformática">Laboratório de informática</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="LaboratórioRobótica" id="LaboratórioRobótica">
+              <label for="LaboratórioRobótica">Laboratório de robótica</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="LaboratórioEdprofissional" id="LaboratórioEdprofissional">
+              <label for="LaboratórioEdprofissional">Laboratório para educação profissional</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaOficinas" id="SalaOficinas">
+              <label for="SalaOficinas">Sala de oficinas da ed. profissional</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaRecursos" id="SalaRecursos">
+              <label for="SalaRecursos">Sala de recursos multifuncionais (AEE)</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>V. Esportes, recreação, cultura e meio ambiente:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="ParqueInfantil" id="ParqueInfantil">
+              <label for="ParqueInfantil">Parque infantil</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="PátioCoberto" id="PátioCoberto">
+              <label for="PátioCoberto">Pátio coberto</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="PátioDescoberto" id="PátioDescoberto">
+              <label for="PátioDescoberto">Pátio descoberto</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Piscina" id="Piscina">
+              <label for="Piscina">Piscina</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="QuadraCoberta" id="QuadraCoberta">
+              <label for="QuadraCoberta">Quadra de esportes coberta</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="QuadraDescoberta" id="QuadraDescoberta">
+              <label for="QuadraDescoberta">Quadra de esportes descoberta</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Terreirão" id="Terreirão">
+              <label for="Terreirão">Terreirão (sem cobertura/piso)</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Auditório" id="Auditório">
+              <label for="Auditório">Auditório</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="EstúdioEdição" id="EstúdioEdição">
+              <label for="EstúdioEdição">Estúdio de gravação e edição</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaDeArtes" id="SalaDeArtes">
+              <label for="SalaDeArtes">Sala/ateliê de artes</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaDeDança" id="SalaDeDança">
+              <label for="SalaDeDança">Sala/estúdio de dança</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaDeMusica" id="SalaDeMusica">
+              <label for="SalaDeMusica">Sala de música/coral</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SalaMultiuso" id="SalaMultiuso">
+              <label for="SalaMultiuso">Sala multiuso</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="AreaHorta" id="AreaHorta">
+              <label for="AreaHorta">Área de horta ou produção agrícola</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="AreaVegetacao" id="AreaVegetacao">
+              <label for="AreaVegetacao">Área de vegetação ou gramado</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="AreaAnimais" id="AreaAnimais">
+              <label for="AreaAnimais">Viveiro/criação de animais</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>VI. Nenhuma das dependências relacionadas:</h4>
+          <div class="ItemCheck">
+            <input type="checkbox" name="NenhumaRelacionadas" id="NenhumaRelacionadas">
+            <label for="NenhumaRelacionadas">Nenhuma das dependências relacionadas</label>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>VII. Acessibilidade (Vias de circulação interna):</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="Corrimão" id="Corrimão">
+              <label for="Corrimão">Corrimão e guarda-corpos</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Elevador" id="Elevador">
+              <label for="Elevador">Elevador</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="PisosTáteis" id="PisosTáteis">
+              <label for="PisosTáteis">Pisos táteis</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="PortasLivres" id="PortasLivres">
+              <label for="PortasLivres">Portas com vão de no mínimo 80 cm</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Rampas" id="Rampas">
+              <label for="Rampas">Rampas</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Sinalização" id="Sinalização">
+              <label for="Sinalização">Sinalização/alarme luminoso</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SinalizaçãoSonora" id="SinalizaçãoSonora">
+              <label for="SinalizaçãoSonora">Sinalização sonora</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SinalizaçãoTátil" id="SinalizaçãoTátil">
+              <label for="SinalizaçãoTátil">Sinalização tátil</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="SinalizaçãoVisual" id="SinalizaçãoVisual">
+              <label for="SinalizaçãoVisual">Sinalização visual (piso/paredes)</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="NenhumAcessibilidade" id="NenhumAcessibilidade">
+              <label for="NenhumAcessibilidade">Nenhum recurso de acessibilidade</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>VIII. Quantidade de salas de aula (Prédio e Fora):</h4>
+          <div class="DivFlexSalas">
+            <div class="DivSalas">
+              <label for="SalasPredio">Salas dentro do prédio:</label>
+              <input type="number" name="SalasPredio" id="SalasPredio" min="0" value="0">
+            </div>
+            <div class="DivSalas">
+              <label for="SalasFora">Salas fora do prédio:</label>
+              <input type="number" name="SalasFora" id="SalasFora" min="0" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>IX. Climatização e Acessibilidade nas salas:</h4>
+          <div class="DivFlexSalas">
+            <div class="DivSalas">
+              <label for="SalasClimatizadas">Salas climatizadas:</label>
+              <input type="number" name="SalasClimatizadas" id="SalasClimatizadas" min="0" value="0">
+            </div>
+            <div class="DivSalas">
+              <label for="SalasAssecibilidade">Salas acessíveis para PCD:</label>
+              <input type="number" name="SalasAssecibilidade" id="SalasAssecibilidade" min="0" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>X. Cantinho da Leitura:</h4>
+          <div class="divFlexColum">
+            <label for="CantinhoDeLeitura">Qtd. de salas com cantinho de leitura (Infantil/Fundamental):</label>
+            <input type="number" name="CantinhoDeLeitura" id="CantinhoDeLeitura" min="0" value="0">
+          </div>
+        </div>
+
+        <div class="BotoesNavegacao">
+          <button type="button" class="BtnVoltar1" id="BtnVoltarParaEtapa1">Voltar</button> 
+          <button type="button" class="BtnAvançar1" id="BtnAvançarParaEtapa3">Avançar</button>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 3: Equipamentos, Recursos e Pedagogia -->
+      <section class="Seção3" style="display: none;">
+        <h3>Equipamentos e Recursos Pedagógicos</h3>
+
+        <div class="GrupoPerguntas">
+          <h4>I. Equipamentos existentes para uso técnico e administrativo:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="AntenaParabólica" id="AntenaParabólica">
+              <label for="AntenaParabólica">Antena parabólica</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Copiadora" id="Copiadora">
+              <label for="Copiadora">Copiadora</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Impressora" id="Impressora">
+              <label for="Impressora">Impressora</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="ImpressoraMultifuncional" id="ImpressoraMultifuncional">
+              <label for="ImpressoraMultifuncional">Impressora multifuncional</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Computadores" id="Computadores">
+              <label for="Computadores">Computadores administrativos</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Scanner" id="Scanner">
+              <label for="Scanner">Scanner</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="NenhumListado" id="NenhumListado">
+              <label for="NenhumListado">Nenhum equipamento listado</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>II. Quantidade de aparelhos de ensino-aprendizagem:</h4>
+          <div class="DivSalas">
+            <div class="Iformatica">
+              <label for="QtdDvd">Aparelho DVD/Blu-ray:</label>
+              <input type="number" name="QtdDvd" id="QtdDvd" min="0" value="0">
+            </div>
+            <div class="Iformatica">
+              <label for="QtdSom">Aparelho de som:</label>
+              <input type="number" name="QtdSom" id="QtdSom" min="0" value="0">
+            </div>
+            <div class="Iformatica">
+              <label for="QtdTv">Aparelho Televisão:</label>
+              <input type="number" name="QtdTv" id="QtdTv" min="0" value="0">
+            </div>
+            <div class="Iformatica">
+              <label for="QtdProjetor">Projetor Multimídia (Data Show):</label>
+              <input type="number" name="QtdProjetor" id="QtdProjetor" min="0" value="0">
+            </div>
+            <div class="Iformatica">
+              <label for="QtdLousa">Lousa Digital:</label>
+              <input type="number" name="QtdLousa" id="QtdLousa" min="0" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>III. Computadores em uso pelos alunos:</h4>
+          <div class="DivSalas">
+            <div class="Iformatica">
+              <label for="Desktop">Computadores de mesa (Desktop):</label>
+              <input type="number" name="Desktop" id="Desktop" min="0" value="0">
+            </div>
+            <div class="Iformatica">
+              <label for="Notebooks">Computadores portáteis (Notebooks):</label>
+              <input type="number" name="Notebooks" id="Notebooks" min="0" value="0">
+            </div>
+            <div class="Iformatica">
+              <label for="Tablets">Tablets:</label>
+              <input type="number" name="Tablets" id="Tablets" min="0" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>IV. Rede local de computadores:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="Acabo" id="Acabo">
+              <label for="Acabo">A cabo</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Wireless" id="Wireless">
+              <label for="Wireless">Sem fio (Wireless)</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="NãoaRede" id="NãoaRede">
+              <label for="NãoaRede">Não há rede local</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>V. Acesso à internet:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="NãoPossuiInternet" id="NãoPossuiInternet">
+              <label for="NãoPossuiInternet">Não possui internet</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="ParaAdministrativo" id="ParaAdministrativo">
+              <label for="ParaAdministrativo">Para uso administrativo</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="ParaAprendizagem" id="ParaAprendizagem">
+              <label for="ParaAprendizagem">Para ensino-aprendizagem</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="ParaAlunos" id="ParaAlunos">
+              <label for="ParaAlunos">Para uso dos alunos</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="ParaComunidade" id="ParaComunidade">
+              <label for="ParaComunidade">Para uso da comunidade</label>
+            </div>
+          </div>
+          <div class="Iformatica" style="margin-top: 15px;">
+            <label for="BandaLarga">Internet banda larga:</label>
+            <select name="BandaLarga" id="BandaLarga">
+              <option value="">Selecione...</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>VI. Alimentação Escolar:</h4>
+          <div class="Iformatica">
+            <label for="AlimentacaoEscolar">A escola fornece alimentação escolar para os alunos?</label>
+            <select name="AlimentacaoEscolar" id="AlimentacaoEscolar">
+              <option value="">Selecione...</option>
+              <option value="Oferece">Oferece</option>
+              <option value="Não oferece">Não oferece</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>VII. Instrumentos e materiais socioculturais/pedagógicos:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="AcervoMultimídia" id="AcervoMultimídia">
+              <label for="AcervoMultimídia">Acervo multimídia</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="BrinquedosInfantil" id="BrinquedosInfantil">
+              <label for="BrinquedosInfantil">Brinquedos para educação infantil</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="Conjuntocientíficos" id="Conjuntocientíficos">
+              <label for="Conjuntocientíficos">Conjunto de materiais científicos</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="EquipamentosDesom" id="EquipamentosDesom">
+              <label for="EquipamentosDesom">Equipamentos para amplificação de som/áudio</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="EquipamentosAudiovisuais" id="EquipamentosAudiovisuais">
+              <label for="EquipamentosAudiovisuais">Equipamentos audiovisuais para prod. estudantil</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="EquipamentosAgricola" id="EquipamentosAgricola">
+              <label for="EquipamentosAgricola">Instrumentos para horta/produção agrícola</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="InstrumentosMusical" id="InstrumentosMusical">
+              <label for="InstrumentosMusical">Instrumentos musicais / banda</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="KitsDeRobótica" id="KitsDeRobótica">
+              <label for="KitsDeRobótica">Kits de robótica</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisEducaçãoEmocional" id="MateriaisEducaçãoEmocional">
+              <label for="MateriaisEducaçãoEmocional">Materiais para educação emocional</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisParaEdProfissional" id="MateriaisParaEdProfissional">
+              <label for="MateriaisParaEdProfissional">Materiais para educação profissional</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisPraticaDesportivas" id="MateriaisPraticaDesportivas">
+              <label for="MateriaisPraticaDesportivas">Materiais para prática desportiva/recreação</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisBilingueESurdo" id="MateriaisBilingueESurdo">
+              <label for="MateriaisBilingueESurdo">Materiais pedagógicos para ed. bilíngue de surdos</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisRelaçõesétnico" id="MateriaisRelaçõesétnico">
+              <label for="MateriaisRelaçõesétnico">Materiais para ed. das relações étnico-raciais</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisEducaçãoCampo" id="MateriaisEducaçãoCampo">
+              <label for="MateriaisEducaçãoCampo">Materiais pedagógicos para ed. do campo</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisPedagógicosIndígena" id="MateriaisPedagógicosIndígena">
+              <label for="MateriaisPedagógicosIndígena">Materiais pedagógicos para ed. indígena</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisPedagógiQuilombola" id="MateriaisPedagógiQuilombola">
+              <label for="MateriaisPedagógiQuilombola">Materiais pedagógicos para ed. quilombola</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="MateriaisEdEspecial" id="MateriaisEdEspecial">
+              <label for="MateriaisEdEspecial">Materiais pedagógicos para educação especial</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="NenhumListados" id="NenhumListados">
+              <label for="NenhumListados">Nenhum dos materiais listados</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>VIII. Ações de Educação Ambiental:</h4>
+          <div class="ItemCheck">
+            <input type="checkbox" name="EducacaoAmbiental" id="EducacaoAmbiental">
+            <label for="EducacaoAmbiental">A escola desenvolve ações na área de educação ambiental</label>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>IX. Projeto Político Pedagógico (PPP):</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="radio" name="ProjetoPolitico" id="ProjetoPoliticoSim" value="Sim">
+              <label for="ProjetoPoliticoSim">Sim</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="radio" name="ProjetoPolitico" id="ProjetoPoliticoNao" value="Não">
+              <label for="ProjetoPoliticoNao">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="GrupoPerguntas">
+          <h4>X. Órgãos Colegiados em funcionamento:</h4>
+          <div class="GridCheckboxes">
+            <div class="ItemCheck">
+              <input type="checkbox" name="NenhumColegiado" id="NenhumColegiado">
+              <label for="NenhumColegiado">Não há órgãos colegiados em funcionamento</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="AssociaçãoPais" id="AssociaçãoPais">
+              <label for="AssociaçãoPais">Associação de pais</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="AssociaçãoPaisMestres" id="AssociaçãoPaisMestres">
+              <label for="AssociaçãoPaisMestres">Associação de pais e mestres</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="ConselhoEscolar" id="ConselhoEscolar">
+              <label for="ConselhoEscolar">Conselho escolar</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="GrêmioEstudantil" id="GrêmioEstudantil">
+              <label for="GrêmioEstudantil">Grêmio estudantil</label>
+            </div>
+            <div class="ItemCheck">
+              <input type="checkbox" name="OutrosColegiados" id="OutrosColegiados">
+              <label for="OutrosColegiados">Outros</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="BotoesNavegacao">
+          <button type="button" class="BtnVoltar1" id="BtnVoltarParaEtapa2">Voltar</button> 
+          <button type="button" class="BtnAvançar1" id="BtnRevisarFinalizar">Revisar e Finalizar</button>
+        </div>
+      </section>
+    </form>
+
+    <!-- Painel Lateral: Dados em tempo real (Live Preview) -->
+    <section class="Dados_Da_Escola" id="PainelPreview">
+      <h2 class="Titulo_Dados">Dados Da Escola</h2>
+      <div class="CardPreview">
+        <div class="SecaoResumoPreview">
+          <h4>Identificação</h4>
+          <p><strong>Nome da Escola:</strong> <span id="PrevNomeEscola" class="DadoVazio">Não informado</span></p>
+          <p><strong>Localidade:</strong> <span id="PrevLocalidade" class="DadoVazio">Não informada</span></p>
+          <p><strong>Dependência:</strong> <span id="PrevDependencia" class="DadoVazio">Não informada</span></p>
+          <p><strong>Ano Letivo:</strong> <span id="PrevAnoLetivo" class="DadoVazio">Não informado</span></p>
+          <p><strong>Local de Funcionamento:</strong> <span id="PrevFuncionamento" class="DadoVazio">Não informado</span></p>
+          <p><strong>Ocupação:</strong> <span id="PrevOcupacao" class="DadoVazio">Não informada</span></p>
+          <p><strong>Abastecimento de Água:</strong> <span id="PrevAgua" class="DadoVazio">Não informado</span></p>
+          <p><strong>Esgotamento Sanitário:</strong> <span id="PrevEsgotamento" class="DadoVazio">Não informado</span></p>
+          <p><strong>Energia Elétrica:</strong> <span id="PrevEnergia" class="DadoVazio">Não informada</span></p>
+          <p><strong>Destinação do Lixo:</strong> <span id="PrevLixo" class="DadoVazio">Não informada</span></p>
+        </div>
+        <hr class="DivisorPreview">
+        <div class="SecaoResumoPreview">
+          <h4>Infraestrutura Marcada</h4>
+          <ul id="PrevInfraestrutura" class="ListaSemEstilo"><li class="DadoVazio">Nenhum item selecionado</li></ul>
+          <p style="margin-top: 10px;"><strong>Salas Prédio / Fora:</strong> <span id="PrevSalasContagem">0 / 0</span></p>
+          <p><strong>Salas Climatizadas / PCD:</strong> <span id="PrevSalasDetalhes">0 / 0</span></p>
+          <p><strong>Cantinho da Leitura:</strong> <span id="PrevCantinhoLeitura">0 salas</span></p>
+        </div>
+        <hr class="DivisorPreview">
+        <div class="SecaoResumoPreview">
+          <h4>Equipamentos e Recursos</h4>
+          <ul id="PrevEquipamentosRecursos" class="ListaSemEstilo"><li class="DadoVazio">Nenhum item selecionado</li></ul>
+          <p style="margin-top: 10px;"><strong>Banda Larga:</strong> <span id="PrevBandaLarga" class="DadoVazio">Não informada</span></p>
+          <p><strong>Alimentação Escolar:</strong> <span id="PrevAlimentacao" class="DadoVazio">Não informada</span></p>
+          <p><strong>Projeto Político Pedagógico (PPP):</strong> <span id="PrevPPP" class="DadoVazio">Não informado</span></p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- SEÇÃO DE CONTATO: Inicialmente Oculta -->
+  <section class="ContatoSeção" id="AreaContato" style="display: none;">
+    <div class="ContatoCard">
+      <h2>Responsável pelo Censo Escolar 2026</h2>
+      <p class="SubtituloContato">Se você tiver dúvidas ou problemas ao preencher o censo das escolas, fale conosco:</p>
+      
+      <div class="ContatoInfo">
+        <div class="ContatoItem">
+          <span class="IconeContato">👤</span>
+          <div>
+            <strong>Responsável Geral:</strong>
+            <p>Carlos Eduardo Ferreira</p>
+          </div>
+        </div>
+        <div class="ContatoItem">
+          <span class="IconeContato">✉️</span>
+          <div>
+            <strong>E-mail de Suporte:</strong>
+            <p>suporte.censo2026@educacao.gov.br</p>
+          </div>
+        </div>
+        <div class="ContatoItem">
+          <span class="IconeContato">📞</span>
+          <div>
+            <strong>Telefone / WhatsApp:</strong>
+            <p>(88) 99876-5432</p>
+          </div>
+        </div>
+        <div class="ContatoItem">
+          <span class="IconeContato">🏢</span>
+          <div>
+            <strong>Setor:</strong>
+            <p>Núcleo de Estatística e Planejamento Escolar</p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" id="BtnFecharContato" class="BtnFechar">Voltar ao Formulário</button>
+    </div>
+  </section>
+
+  <!-- CENTRAL DE REVISÃO E IMPRESSÃO: Modal Centralizado Oculto -->
+  <section class="RevisaoCentralizada" id="AreaRevisao" style="display: none;">
+    <div class="RevisaoCard">
+      <header class="RevisaoHeader">
+        <h2>Revisão Geral do Cadastro</h2>
+        <p>Verifique com atenção os dados cadastrados da escola antes de realizar a impressão oficial.</p>
+      </header>
+      
+      <div class="RevisaoConteudo" id="RelatorioFinalPrint">
+        <!-- O JS irá estruturar um relatório completo, limpo e adequado para impressão -->
+      </div>
+      
+      <footer class="RevisaoBotoes no-print">
+        <button type="button" id="BtnVoltarParaEditar" class="BtnSecundario">
+          <span class="IconeBotao">✏️</span> Voltar e Editar
+        </button>
+        <button type="button" id="BtnExecutarImpressao" class="BtnPrimario">
+          <span class="IconeBotao">🖨️</span> Imprimir Relatório
+        </button>
+      </footer>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

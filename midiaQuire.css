@@ -1,0 +1,142 @@
+/* ==========================================================================
+   midiaQuire.css - Regras de Responsividade para Escolas Censo 2026
+   ========================================================================== */
+
+/* Telas Médias e Tablets (Laptops pequenos e Ipads) */
+@media screen and (max-width: 1024px) {
+  .Conteiner {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .Formulario {
+    width: 90vw;
+    max-width: 600px;
+  }
+
+  .Dados_Da_Escola {
+    width: 90vw;
+    max-width: 600px;
+    margin-left: 0;
+  }
+
+  /* Ajustes gerais de espaçamento para flex-containers */
+  .divSelect1, 
+  .DivOpção3, 
+  .DivOpção4, 
+  .DivOpção5 {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .DivOpção2 {
+    margin-left: 0;
+  }
+
+  .divFlexColum2,
+  .divFlexColum4,
+  .divFlexColum6 {
+    margin-left: 0;
+  }
+
+  .DivFlexSalas {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .DivSalas {
+    width: 100%;
+  }
+}
+
+/* Telas Pequenas e Celulares (Smartphones) */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  .DivPrincipal {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 10px;
+  }
+
+  .H1Titulo1 {
+    font-size: 1.5rem;
+  }
+
+  .MenuNavegacao {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .LinkMenu {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .Conteiner {
+    width: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+  }
+
+  .Formulario {
+    width: 95vw;
+    padding: 15px 10px;
+    box-sizing: border-box;
+  }
+
+  .Dados_Da_Escola {
+    width: 95vw;
+    padding: 15px 10px;
+    box-sizing: border-box;
+  }
+
+  .GridCheckboxes {
+    grid-template-columns: 1fr; /* Coluna única no mobile */
+    gap: 10px;
+  }
+
+  .BotoesNavegacao {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .BotoesNavegacao button {
+    width: 100%;
+  }
+
+  /* Modal de Revisão */
+  .RevisaoCard {
+    width: 95%;
+    max-height: 90vh;
+    padding: 15px;
+  }
+
+  .RevisaoBotoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .RevisaoBotoes button {
+    width: 100%;
+  }
+
+  /* Contato */
+  .ContatoCard {
+    width: 95%;
+    padding: 20px 15px;
+  }
+
+  .ContatoItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
