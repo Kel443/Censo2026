@@ -1,0 +1,71 @@
+/* ========= RESPONSIVIDADE — MidiaQuiry.css ========= */
+
+@media (max-width: 1024px) {
+  .Conteiner {
+    flex-direction: column;
+    width: 96%;
+  }
+
+  .Dados_Da_Escola {
+    width: 100%;
+    min-width: unset;
+    position: static;
+    max-height: none;
+  }
+
+  .Formulario {
+    width: 100%;
+  }
+
+  .divSelect1,
+  .DivOpção3,
+  .DivOpção4,
+  .DivOpção5 {
+    grid-template-columns: 1fr;
+  }
+
+  .DivOpção2 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .H1Titulo1 {
+    font-size: 1rem;
+  }
+
+  .Formulario {
+    padding: 20px 16px;
+  }
+
+  .Dados_Da_Escola {
+    padding: 16px 14px;
+  }
+
+  .barra-progresso {
+    width: 98%;
+  }
+
+  .passo-label {
+    font-size: .6rem;
+  }
+
+  .passo-circulo {
+    width: 28px;
+    height: 28px;
+    font-size: .75rem;
+  }
+
+  .DivFlexSalas {
+    grid-template-columns: 1fr;
+  }
+
+  .BtnAvançar1,
+  .BtnAvançar,
+  .BtnVoltar,
+  .BtnVoltar1,
+  .imprimir,
+  .btn-editar {
+    width: 100%;
+  }
+}
