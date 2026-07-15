@@ -630,3 +630,21 @@ h5 {
     font-style: italic;
   }
 }
+
+.Footertext {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #09090B;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
